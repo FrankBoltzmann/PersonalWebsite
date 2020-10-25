@@ -1,0 +1,110 @@
+
+
+.skillheader {
+	font-size: 24px;
+	height: 30px;
+	width: 90%;
+	line-height: 30px;
+	margin: 10px 5% 5px 5%;
+	text-align: center;
+	border-bottom: 1px solid black;
+	display: inline-block;
+	padding:0px 0px;
+	text-decoration: none;
+	float: left;
+}
+
+.skill {
+  width: 49%;
+  height: auto;
+  margin: 4px 0.5% 4px 0.5%;
+  position: relative;
+  float: left;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flex;
+  display: inline-flex;
+  box-shadow: 0 0 20px 2px #ccc;
+}
+
+.skill-title {
+  background-color: #428BCA;
+  color: #fff;
+  padding: 0.2em 0.6em 0.2em 0.4em;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 480px) {
+  .skill { width: 99%; }
+
+  .skillheader {
+    height: 7vh;
+    line-height: 7vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 18px;
+  }
+}
+/*
+.skill-val {
+  padding: 0.2em 0.2em 0.2em 0.4em;
+  border-left: 0;
+  //width: 60%;
+  align-content: middle;
+  align-items: middle;
+}
+
+
+span.star {
+     background: url("images/stars.png") top left;
+     display: inline-block;
+     height: 25px;
+     width: 133px;
+     overflow: hidden;
+     text-indent: -9999px;
+     background-position: -135px 0;
+}
+
+span.r1 {background-position-x: -108px;}
+span.r2 {background-position-x: -81px;}
+span.r3 {background-position-x: -54px;}
+span.r4 {background-position-x: -27px;}
+span.r5 {background-position-x: 0;}
+span.rhalf {background-position-y: 25px;}*/
+
+.star {
+     background: url("images/stars-small.png") top left;
+     display: inline-block;
+     height: 17.0px;
+     width: 88.7px;
+     overflow: hidden;
+     text-indent: -9999px;
+     background-position: -90px 0;
+     float: right;
+     right: 0.4em;
+     position: absolute;
+     top: 50%;/*
+     transform: -webkit-translateY(-52%);
+		transform: -moz-translateY(-52%);
+     transform: -ms-translateY(-52%);
+		transform: -o-translateY(-52%);
+     transform: translateY(-52%);
+		transform: -webkit-translateY(-8.7px);
+	transform: -moz-translateY(-8.7px);
+		transform: -ms-translateY(-8.7px);
+	transform: -o-translateY(-8.7px);
+		transform: translateY(-8.7px);*/
+		margin-top: -8.7px;
+     vertical-align: top;
+
+}
+
+.r1 {background-position: -72px 0;}
+.r2 {background-position: -54px 0;}
+.r3 {background-position: -36px 0;}
+.r4 {background-position: -18px 0;}
+.r5 {background-position: 0 0;}
+.r1h {background-position: -72px 17.3px;}
+.r2h {background-position: -54px 17.3px;}
+.r3h {background-position: -36px 17.3px;}
+.r4h {background-position: -18px 17.3px;}
+.r5h {background-position: 0 17.3px;}

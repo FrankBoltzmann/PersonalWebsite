@@ -1,0 +1,229 @@
+.timeline {
+  position:relative;
+  padding: 2em 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  float: left;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 18px;
+  height: 100%;
+  width: 5px;
+  background: -webkit-gradient( /* Chrome,Safari4+ */
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%,rgba(66,139,202,0)),
+    color-stop(10%,rgba(66,139,202,1)),
+    color-stop(90%,rgba(66,139,202,1)),
+    color-stop(100%,rgba(66,139,202,0))
+  );
+  background: -webkit-linear-gradient( /* Chrome10+,Safari5.1+ */
+    top,
+    rgba(66,139,202,0) 0%, // #428BCA
+    rgba(66,139,202,1) 10%,
+    rgba(66,139,202,1) 90%,
+    rgba(66,139,202,0) 100%
+  );
+  background: -moz-linear-gradient( /* For Firefox 3.6 to 15 */
+    top,
+    rgba(66,139,202,0) 0%, // #428BCA
+    rgba(66,139,202,1) 10%,
+    rgba(66,139,202,1) 90%,
+    rgba(66,139,202,0) 100%
+  );
+  background: -ms-linear-gradient( /* IE10+ */
+    top,
+    rgba(66,139,202,0) 0%, // #428BCA
+    rgba(66,139,202,1) 10%,
+    rgba(66,139,202,1) 90%,
+    rgba(66,139,202,0) 100%
+  );
+  background: -o-linear-gradient( /* For Opera 11.6 to 12.0 */
+    top,
+    rgba(66,139,202,0) 0%, // #428BCA
+    rgba(66,139,202,1) 10%,
+    rgba(66,139,202,1) 90%,
+    rgba(66,139,202,0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(66,139,202,0) 0%, // #428BCA
+    rgba(66,139,202,1) 10%,
+    rgba(66,139,202,1) 90%,
+    rgba(66,139,202,0) 100%
+  );
+}
+
+.timeline-block {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  //border: 1px solid black;
+}
+
+.timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.timeline-year {
+  width:40px;
+  height:auto;
+  display:block;
+  position: absolute;
+  left:0;
+  top: 20px;
+  background-color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.timeline-content {
+  position: relative;
+  padding: 0;
+  margin: 0 0 0 60px;
+  //border: 1px solid black;
+  box-shadow: 0 0 20px 2px #ccc;
+  text-align: center;
+}
+
+.timeline-title {
+	font-size: 20px;
+	height: auto;
+	width: 90%;
+	line-height: 22px;
+	margin: 0px 5px 5px 5px;
+	text-align: center;
+	border-bottom: 1px solid black;
+	display:inline-block;
+	padding:0px 0px 5px 0px;
+	text-decoration: none;
+}
+
+.timeline-left {
+  float: left;
+  text-align: left;
+  vertical-align: top;
+  width: auto;
+  padding: 0 0 0 5px;
+  margin: 0 1em 1em 1em;
+  font-weight: bold;
+}
+
+.timeline-center {
+  float: center;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+  padding: 0 0 0 5px;
+  margin: 0 1em 1em 1em;
+  font-weight: bold;
+}
+
+.timeline-right {
+  float: right;
+  text-align: right;
+  vertical-align: top;
+  width: auto;
+  padding: 0;
+  margin: 0 1em 1em 1em;
+  font-weight: bold;
+}
+
+.timeline-content p {
+  float: left;
+  text-align: justify;
+  text-justify: inter-word;
+  vertical-align: bottom;
+  width: auto;
+  padding: 0;
+  margin: 0em 1em 1em 1em;
+  font-weight: normal;
+  overflow: auto;
+}
+
+.timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.timeline-content:before {
+  background-color: #fff;
+  box-shadow: -6px 6px 10px 0 rgba( 178, 178, 178, .4 );
+  content: "\00a0";
+  display: block;
+  height: 20px;
+  left: -10px;
+  position: relative;
+  top: 20px;
+  -webkit-transform: rotate( 45deg );
+  -ms-transform: rotate( 45deg );
+  transform: rotate( 45deg );
+  width:  20px;
+}
+
+@media only screen and (max-width: 960px) {
+  .timeline-grade {
+    float: left;
+    text-align: left;
+    font-weight: bold;
+    width: auto;
+    padding: 0;
+    margin: 1em;
+    margin-top: 0;
+  }
+
+  .timeline-location {
+    float: left;
+    text-align: left;
+    display: inline-block;
+    font-weight: bold;
+    width: 100%;
+    padding: 0;
+    margin: 1em;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .timeline-grade {
+    float: left;
+    text-align: left;
+    font-weight: bold;
+    width: auto;
+    padding: 0;
+    margin: 1em;
+    margin-top: 0;
+  }
+
+  .timeline-location {
+    float: left;
+    text-align: left;
+    display: inline-block;
+    font-weight: bold;
+    width: auto;
+    padding: 0;
+    margin: 1em;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .skill { width: 99%; }
+
+  .skillheader {
+    height: 5vh;
+    line-height: 5vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 14px;
+  }
+}

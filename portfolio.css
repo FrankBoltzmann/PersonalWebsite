@@ -1,0 +1,40 @@
+.folio-box {
+  padding: 0.6em 3% 0.6em 3%;
+  margin: 4px 0.5% 4px 0.5%;
+  text-align: justify;
+  text-justify: inter-word;
+  box-shadow: 0 0 20px 2px #ccc;
+  float: left;
+  width: 93%;
+  position: relative;
+}
+
+.folio-box a {
+  display: block;
+  float: center;
+}
+
+.folio-box a img{
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 20px 2px #428BCA;
+}
+
+.folio-box h2 {
+  font-size: 24px;
+	height: 30px;
+	width: 90%;
+	line-height: 30px;
+	margin: 5px auto;
+	text-align: center;
+	border-bottom: 1px solid black;
+	display:block;
+	padding:0px 0px;
+	text-decoration: none;
+}
+
+.folio-box p {
+
+}
