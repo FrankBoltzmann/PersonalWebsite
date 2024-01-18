@@ -100,7 +100,7 @@ div.overlay {
 }
 
 .myHeader {
-	font-size: 24px;
+	font-size: 20px;
 	height: 40px;
 	width: 90%;
 	line-height: 40px;
@@ -111,6 +111,7 @@ div.overlay {
 	padding:0px 0px;
 	text-decoration: none;
 	text-transform: uppercase;
+	word-spacing:0.3em;
 }
 
 .profilePic {
@@ -185,7 +186,9 @@ div.overlay {
     line-height: 11vh;
   	margin-top: 3vh;
     margin-bottom: 3vh;
-		font-size: 40px;
+	font-size: 40px;
+	//text-transform: uppercase;
+	
   }
   .myButton {
     height: 13vh;
@@ -262,7 +265,7 @@ div.overlay {
 		line-height: 11vh;
 		margin-top: 3vh;
 		margin-bottom: 3vh;
-		font-size: 20px;
+		font-size: 24px;
 	}
 	.myButton {
 		height: 13vh;
