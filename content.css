@@ -57,7 +57,7 @@
   color: black;
 }
 
-a:link, a:visited, a:hover, a:active { text-decoration: none; color: black; }
+a:link, a:visited, a:hover, a:active { text-decoration: none; }
 
 .credits {
   padding: 0.6em 3% 0.6em 3%;
