@@ -9,7 +9,7 @@
 
 @font-face {
 	font-family: 'nobel-light';
-	src: url("fonts/nobel-light.ttf")!important;
+	src: url("/fonts/nobel-light.ttf")!important;
   src: url("fonts/nobel-light.eot?#iefix") format('embedded-opentype'),
 			 url("fonts/nobel-light.woff") format('woff'),
 			 url("fonts/nobel-light.ttf") format('truetype'),
@@ -236,6 +236,7 @@ div.overlay {
 .credits-menu a {
   float: center;
   margin: 0 auto;
+  margin-top: 5px;
   display: -webkit-inline-flex;
   display: -ms-inline-flex;
   display: inline-flex;

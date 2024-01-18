@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var mobileBtnH = $(".myButton").height()*100.0/13.0;//$(window).height();
+  var mobileBtnH = document.getElementById('buttonGroup').offsetHeight + document.getElementById('creditsMenu').offsetHeight + 20;//$(window).height();
 
 
   // Hide toTop at page load
