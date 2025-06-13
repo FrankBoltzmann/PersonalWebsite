@@ -147,6 +147,7 @@
   margin: 0em 1em 1em 1em;
   font-weight: normal;
   overflow: auto;
+  overflow-wrap: break-word;
 }
 
 .timeline-content:after {

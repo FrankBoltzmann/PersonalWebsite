@@ -33,6 +33,7 @@ body {
 	font-family: nobel-light!important;
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
 	//background-image: url("images/computer.jpg");
 	//background-repeat: no-repeat;
 }

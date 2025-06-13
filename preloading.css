@@ -12,6 +12,12 @@ body { z-index: 10; }
 @-o-keyframes vanish{to {visibility:hidden;height:0;width:0;z-index:-1;}}
 @keyframes vanish{to {visibility:hidden;height:0;width:0;z-index:-1;}}
 
+:root {
+  --preload-time: 1.5s;
+  --buffer-time: 0.1s;
+  --preload-time-buffered: calc(var(--preload-time) + var(--buffer-time));
+}
+
 .loadingBG {
   background:#fff;
   position:fixed;
@@ -20,11 +26,11 @@ body { z-index: 10; }
   left:0;
   right:0;
   z-index:1334;
-  -webkit-animation: fadeout 0.2s linear 5s forwards, vanish 0s linear 5.2s forwards;
-  -moz-animation: fadeout 0.2s linear 5s forwards, vanish 0s linear 5.2s forwards;
-  -ms-animation: fadeout 0.2s linear 5s forwards, vanish 0s linear 5.2s forwards;
-  -o-animation: fadeout 0.2s linear 5s forwards, vanish 0s linear 5.2s forwards;
-  animation: fadeout 0.2s linear 5s forwards, vanish 0s linear 5.2s forwards;
+  -webkit-animation: fadeout var(--buffer-time) linear var(--preload-time) forwards, vanish 0s linear var(--preload-time-buffered) forwards;
+  -moz-animation: fadeout var(--buffer-time) linear var(--preload-time) forwards, vanish 0s linear var(--preload-time-buffered) forwards;
+  -ms-animation: fadeout var(--buffer-time) linear var(--preload-time) forwards, vanish 0s linear var(--preload-time-buffered) forwards;
+  -o-animation: fadeout var(--buffer-time) linear var(--preload-time) forwards, vanish 0s linear var(--preload-time-buffered) forwards;
+  animation: fadeout var(--buffer-time) linear var(--preload-time) forwards, vanish 0s linear var(--preload-time-buffered) forwards;
 }
 
 @-webkit-keyframes loading{from{max-width:0;}}
@@ -53,11 +59,11 @@ body { z-index: 10; }
   width: 420px;
   height: 50px;
   max-width: 100%;
-  -webkit-animation:loading 5s;
-  -moz-animation:loading 5s;
-  -o-animation:loading 5s;
-  -ms-animation:loading 5s;
-  animation:loading 5s;
+  -webkit-animation:loading var(--preload-time);
+  -moz-animation:loading var(--preload-time);
+  -o-animation:loading var(--preload-time);
+  -ms-animation:loading var(--preload-time);
+  animation:loading var(--preload-time);
 }
 
 .loader::after {
