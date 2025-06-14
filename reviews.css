@@ -1,0 +1,111 @@
+.reviews {
+  position:relative;
+  padding: 2em 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  float: left;
+}
+
+.review-block {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  //border: 1px solid black;
+}
+
+.review-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.reviewer {
+  width:72px;
+  height:auto;
+  display:block;
+  position: absolute;
+  left:0;
+  top: 20px;
+  background-color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.review-content {
+  position: relative;
+  padding: 0;
+  margin: 0 0 0 80px;
+  //border: 1px solid black;
+  box-shadow: 0 0 20px 2px #ccc;
+  text-align: center;
+}
+
+.review-title {
+	font-size: 20px;
+	height: auto;
+	width: 90%;
+	line-height: 22px;
+	margin: 0px 5px 5px 5px;
+	text-align: center;
+	border-bottom: 1px solid black;
+	display:inline-block;
+	padding:0px 0px 5px 0px;
+	text-decoration: none;
+}
+
+.review-center {
+  float: center;
+  text-align: center;
+  vertical-align: top;
+  width: auto;
+  padding: 0 0 0 5px;
+  margin: 0 1em 1em 1em;
+  font-weight: bold;
+}
+
+.review-content p {
+  float: left;
+  text-align: justify;
+  text-justify: inter-word;
+  vertical-align: bottom;
+  width: auto;
+  padding: 0;
+  margin: 0em 1em 1em 1em;
+  font-weight: normal;
+  overflow: auto;
+  overflow-wrap: break-word;
+}
+
+.review-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.review-content:before {
+  background-color: #fff;
+  box-shadow: -6px 6px 10px 0 rgba( 178, 178, 178, .4 );
+  content: "\00a0";
+  display: block;
+  height: 20px;
+  left: -10px;
+  position: relative;
+  top: 20px;
+  -webkit-transform: rotate( 45deg );
+  -ms-transform: rotate( 45deg );
+  transform: rotate( 45deg );
+  width:  20px;
+}
+
+@media only screen and (max-width: 960px) {
+
+}
+
+@media only screen and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+
+}

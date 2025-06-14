@@ -15,16 +15,14 @@
 }
 
 .skill {
-  width: 49%;
-  height: auto;
-  margin: 4px 0.5% 4px 0.5%;
-  position: relative;
-  float: left;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flex;
   display: inline-flex;
+  float: none;           /* remove float */
+  width: auto;           /* let it grow with content */
+  max-width: 100%;       /* prevent overflow on long titles */
+  margin: 4px;
   box-shadow: 0 0 20px 2px #ccc;
 }
+
 
 .skill-title {
   background-color: #428BCA;
@@ -34,14 +32,9 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .skill { width: 99%; }
-
-  .skillheader {
-    height: 7vh;
-    line-height: 7vh;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    font-size: 18px;
+  .skill {
+    width: 100%;
+    display: block;
   }
 }
 /*
@@ -95,6 +88,7 @@ span.rhalf {background-position-y: 25px;}*/
 		transform: translateY(-8.7px);*/
 		margin-top: -8.7px;
      vertical-align: top;
+	 display: none !important;
 
 }
 
