@@ -32,6 +32,11 @@
   font-weight: bold;
 }
 
+.review-block:nth-child(even) .reviewer {
+  left: auto;
+  right: 0;
+}
+
 .review-content {
   position: relative;
   padding: 0;
@@ -39,6 +44,10 @@
   //border: 1px solid black;
   box-shadow: 0 0 20px 2px #ccc;
   text-align: center;
+}
+
+.review-block:nth-child(even) .review-content {
+  margin: 0 80px 0 0;
 }
 
 .review-title {
@@ -84,27 +93,99 @@
 }
 
 .review-content:before {
+  content: "\00a0";
+  position: absolute;
+  display: block;
   background-color: #fff;
-  box-shadow: -6px 6px 10px 0 rgba( 178, 178, 178, .4 );
+  box-shadow: -6px 6px 10px 0 rgba(178, 178, 178, .4);
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  left: -10px; /* Align to left */
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+
+.review-block:nth-child(even) .review-content:before {
+  left: auto;
+  right: -10px;
+  -webkit-transform: rotate( 225deg );
+  -ms-transform: rotate( 225deg );
+  transform: rotate( 225deg );
+}
+/*
+.review-block:nth-child(even) .review-content:after {
+  background-color: #fff;
   content: "\00a0";
   display: block;
-  height: 20px;
-  left: -10px;
-  position: relative;
+  left: auto;
+  right: -10px;
   top: 20px;
+  position: relative;
+  height: 20px;
+  width:  20px;
   -webkit-transform: rotate( 45deg );
   -ms-transform: rotate( 45deg );
-  transform: rotate( 45deg );
-  width:  20px;
+  transform: rotate(45deg);
+  box-shadow: 6px 6px 10px 0 rgba(178, 178, 178, .4);
+}*/
+
+.quotation {
+  position: relative;
+  margin: 0;
 }
+
+/* Only show the opening quote before the first paragraph */
+.quotation p:first-of-type::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("images/quote.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: top;
+  margin-right: 0.3em;
+}
+
+/* Only show the closing quote after the last paragraph */
+.quotation p:last-of-type::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("images/quote.png");
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: bottom;
+  margin-left: 0.3em;
+}
+
 
 @media only screen and (max-width: 960px) {
 
 }
 
 @media only screen and (max-width: 767px) {
+  .review-content,
+  .review-block:nth-child(even) .review-content {
+    margin: 0;
+  }
 
+  .reviewer,
+  .review-block:nth-child(even) .reviewer {
+    position: static;
+    margin: 0 auto 10px auto;
+  }
+
+  .review-content:before,
+  .review-block:nth-child(even) .review-content:before {
+    display: none;
+  }
 }
+
 
 @media only screen and (max-width: 480px) {
 
