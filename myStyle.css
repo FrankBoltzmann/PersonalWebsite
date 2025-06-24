@@ -166,6 +166,49 @@ div.overlay {
 	margin-left: 30px;
 }
 
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  quotes: none; /* Prevent use of open-quote / close-quote */
+}
+
+blockquote::before,
+blockquote::after {
+  content: none !important; /* This removes the default gray quotes */
+}
+
+/* Your custom styling using p */
+blockquote p:first-of-type::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("images/quote.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: top;
+  margin-right: 0.3em;
+}
+
+blockquote p:last-of-type::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("images/quote.png");
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: bottom;
+  margin-left: 0.3em;
+}
+
+
+
+/**/
+
 @media only screen and (max-width: 767px) {
 	.wrapper {
 		float: none;
