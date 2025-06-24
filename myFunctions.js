@@ -1,77 +1,67 @@
 $(document).ready(function () {
-  var mobileBtnH = document.getElementById('buttonGroup').offsetHeight + document.getElementById('creditsMenu').offsetHeight;//$(window).height();
+  const scrollSmoothly = true; // Toggle this to false for instant scroll
+  const mobileThreshold = 767;
+  let curPage = "abt";
 
+  const $toTop = $("#toTop");
+  const $buttonGroup = $("#buttonGroup");
+  const $creditsMenu = $("#creditsMenu");
+  const $sections = $("#edu, #exp, #fol, #skl");
+  const mobileBtnH = $buttonGroup.outerHeight() + $creditsMenu.outerHeight();
 
-  // Hide toTop at page load
-  $("#toTop").css("display","none");
-  //$("#abt").css("display","none");
-  $("#edu").css("display","none");
-  $("#exp").css("display","none");
-  $("#fol").css("display","none");
-  $("#skl").css("display","none");
+  // Initial UI setup
+  $toTop.hide();
+  $sections.hide();
+  $("#abt-btn").addClass("staydown");
 
-  $("#abt-btn").toggleClass('staydown');
+  // Scroll detection and button group animation
+  $(window).on("scroll", function () {
+    const isMobile = $(window).width() <= mobileThreshold;
+    const scrollTop = $(window).scrollTop();
 
-  // Check to see if the window is top if not then display button
-	$(window).scroll(function(){
-
-    // if mobile
-    if($(window).width() <= 767) {
-  		if ($(window).scrollTop() > mobileBtnH-20) {
-  			$("#toTop").fadeIn("slow");
-  		} else {
-  			$("#toTop").fadeOut("slow");
-  		}
-    } // if desktop
-    else {
-      if($(window).scrollTop() > $("#buttonGroup").offset().top) {
-        $("#buttonGroup").stop().animate({
-          marginTop: $(window).scrollTop() /*- $("#buttonGroup").offset().top*/ + 15
-        });
-      }
-      else {
-        $("#buttonGroup").stop().animate({marginTop: 0});
-      }
+    if (isMobile) {
+      scrollTop > mobileBtnH - 20 ? $toTop.fadeIn("slow") : $toTop.fadeOut("slow");
+    } else {
+      const marginTop = scrollTop > $buttonGroup.offset().top ? scrollTop + 15 : 0;
+      $buttonGroup.stop().animate({ marginTop });
     }
-	});
-
-	// Click event to scroll to top
-	$("#toTop").click(function(){
-		$('html, body').animate({scrollTop : 0},800);
-		return false;
-	});
-
-  // switch between divisions
-  var curPage="abt";
-
-  $("#parent").on('click', '.myButton', function() {
-
-    var tmpdelay = 0;
-
-    // activate current button, deactivate others
-    if($(window).width() > 767) {
-      tmpdelay = 300;
-    }
-    else
-    {
-      $('html,body').animate({scrollTop: mobileBtnH }, 'slow');
-    }
-
-
-    if(!$(this).hasClass('staydown'))
-    {
-      // toggle current button and untoggle others
-      $(this).toggleClass('staydown').siblings().removeClass('staydown');
-
-      // fade in current page, fade out others
-      if(curPage.length){
-        $("#"+curPage).fadeOut(299);
-      }
-      curPage=$(this).data("page");
-      $("#"+curPage).delay(tmpdelay).fadeIn("slow");
-    }
-
   });
 
+  // Scroll-to-top button
+  $toTop.on("click", function () {
+    $("html, body").animate({ scrollTop: 0 }, 800);
+    return false;
+  });
 
+  // Button click navigation
+  $("#parent").on("click", ".myButton", function (e) {
+    e.preventDefault();
+    const target = $(this).data("page");
+
+    if ($(this).hasClass("staydown") || !target) return;
+
+    const isMobile = $(window).width() <= mobileThreshold;
+    const tmpDelay = isMobile ? 0 : 300;
+
+    if (isMobile) {
+      $("html,body").animate({ scrollTop: mobileBtnH }, scrollSmoothly ? "slow" : 0);
+    }
+
+    $(".myButton").removeClass("staydown");
+    $(this).addClass("staydown");
+
+    if (curPage) $(`#${curPage}`).fadeOut(299);
+    curPage = target;
+    $(`#${curPage}`).delay(tmpDelay).fadeIn("slow");
+    window.location.hash = curPage; // Update URL hash
+  });
+
+  // URL hash support
+  const hash = window.location.hash.replace("#", "");
+  if (hash && $(`#${hash}`).length) {
+    $(`#${curPage}`).hide(); // Hide the default section
+    curPage = hash;
+    $(`#${curPage}`).fadeIn("slow");
+    $(`a[data-page="${curPage}"]`).addClass("staydown").siblings().removeClass("staydown");
+  }
 });
